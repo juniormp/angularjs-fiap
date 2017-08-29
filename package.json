@@ -3,7 +3,7 @@
   "description": "Demo Heroku",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node web.js"
   },
   "dependencies": {
     "ejs": "~1.0.0",
