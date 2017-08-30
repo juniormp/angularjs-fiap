@@ -1,17 +1,19 @@
-app.factory('cadastroServices', ['$http', 'locationServices', function($http, locationServices) {
+app.factory('cadastroServices', ['$http', 'locationServices', function ($http, locationServices) {
 
-        function salvar(empresa, callback) {
-            console.log(empresa)
-            $http({
-                method:'POST',
-                url: locationServices.getLocationAPI() + '/empresa',
-                data:JSON.stringify(empresa)
-            }).then(function (data) {
-                if (callback) callback(data)
-            });
-        }
+    function salvar(empresa, callback) {
+        console.log(empresa)
+        $http({
+            method: 'POST',
+            url: locationServices.getLocationAPI() + '/empresa',
+            data: JSON.stringify(empresa)
+        }).then(function (data) {
+            if (callback) callback(data)
+        }, function errorCallback(response) {
+            if (callback) callback(response)
+        })
+    }
 
-        return {
-            salvar:salvar
-        };
-    }])
+    return {
+        salvar: salvar
+    };
+}])
