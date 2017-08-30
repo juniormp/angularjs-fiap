@@ -3,7 +3,9 @@
  * E inclu�mos a depend�ncia do ngRoute
  */
 var app = angular.module('website', [
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate',
+    'toastr'
 ]);
 
 /**
