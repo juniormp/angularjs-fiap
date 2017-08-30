@@ -6,13 +6,17 @@
             <hr>
             <form>
 
-                <div class="form">
-
-                        <input ng-model="empresa.nome" type="text" class="form-control" placeholder="Digite aqui o nome">
-
-                        <input ng-model="empresa.login" type="email" class="form-control" placeholder="Digite aqui o E-mail">
-                    
-                        <input ng-model="empresa.senha" type="password" class="form-control" placeholder="Digite aqui o Senha">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input ng-model="empresa.nome" id='nome' type="text" class="form-control" placeholder="Digite aqui o nome">
+                </div>
+                <div class="form-group">
+                    <label for="login">login</label>
+                    <input ng-model="empresa.login" id='login' type="email" class="form-control" placeholder="Digite aqui o E-mail">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input ng-model="empresa.senha" id='senha' type="password" class="form-control" placeholder="Digite aqui a senha">
                 </div>
 
                 <div class="pull-right">
