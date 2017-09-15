@@ -1,7 +1,7 @@
 app.factory('locationServices', ['$http', function($http) {
 
         function getLocationAPI(callback) {
-            return "http://localhost:8080";
+            return "http://localhost:5001";
         }
 
         return {
