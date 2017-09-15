@@ -4,7 +4,7 @@ app.factory('cadastroServices', ['$http', 'locationServices', function ($http, l
         console.log(empresa)
         $http({
             method: 'POST',
-            url: locationServices.getLocationAPI() + '/empresa',
+            url: locationServices.getLocationAPI() + '/empresas',
             data: JSON.stringify(empresa)
         }).then(function (data) {
             if (callback) callback(data)
