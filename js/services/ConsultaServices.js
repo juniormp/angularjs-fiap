@@ -3,7 +3,7 @@ app.factory('consultaServices', ['$http', 'locationServices', function($http, lo
         function consultarCPF(cpf, callback) {
             $http({
                 method: 'GET',
-                url: locationServices.getLocationAPI() + '/consulta',
+                url: locationServices.getLocationAPI() + '/score',
                 data:JSON.stringify(cpf)
             }).then(function (data) {
                 if (callback) callback(data)

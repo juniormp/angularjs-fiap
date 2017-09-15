@@ -5,7 +5,7 @@ app.controller('ConsultaCtrl', function ($scope, $location, consultaServices) {
         "score" : ""
 	};
 
-	$scope.consultar = function (cpf) {
+	$scope.consultarCPF = function (cpf) {
 		consultaServices.consultarCPF(cpf, function(score) {
 			console.log(score);
             // Jogar o valor do score no campo
