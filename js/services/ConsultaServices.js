@@ -2,7 +2,7 @@ app.factory('consultaServices', ['$http', 'locationServices', function($http, lo
 
         function consultarCPF(cpf, callback) {
             $http({
-                method: 'GET'
+                method: 'GET',
                 url: locationServices.getLocationAPI() + '/consulta',
                 data:JSON.stringify(cpf)
             }).then(function (data) {

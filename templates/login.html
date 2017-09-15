@@ -1,0 +1,16 @@
+<form class="box" ng-submit="fazerLogin()">
+    <hr>
+    <h2 class="intro-text text-center"><strong>Faça o login</strong></h2>
+    <hr>
+    <div class="form-group">
+        <label for="usuario">Login</label>
+        <input ng-model="login.usuario" id='usuario' type="text" class="form-control" placeholder="Digite aqui o usuário">
+    </div>
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input ng-model="login.senha" id='senha' type="password" class="form-control" placeholder="Digite aqui a senha">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-large">Login</button>
+    </div>
+</form>
