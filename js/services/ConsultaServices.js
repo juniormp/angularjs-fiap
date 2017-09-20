@@ -1,4 +1,4 @@
-app.factory('consultaServices', ['$http', 'locationServices', function ($http, locationServices) {
+app.factory('consultaServices', ['$http', 'locationServices', 'loginServices', function ($http, locationServices, loginServices) {
 
     function consultarCPF(cpf, callback) {
         $http({
@@ -13,7 +13,9 @@ app.factory('consultaServices', ['$http', 'locationServices', function ($http, l
     function consultarHistorico(callback) {
         $http({
             method: 'GET',
-            url: locationServices.getLocationAPI() + '/empresas/historico'
+            url: locationServices.getLocationAPI() + '/empresas/historico',
+            headers: {
+                'Authorization': loginServices.getToken()}
         }).then(function (data) {
             if (callback) callback(data)
         })
