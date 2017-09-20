@@ -1,10 +1,10 @@
-app.controller('LoginCtrl', function ($scope, $location) {
+app.controller('LoginCtrl', function ($scope, $location, loginServices) {
     $scope.login = {
-        usuario: "",
+        login: "",
         senha: ""
     };
 
     $scope.fazerLogin = function() {
-        console.log($scope.login);
+        loginServices.login($scope.login);
     }
 });
