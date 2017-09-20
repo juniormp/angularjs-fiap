@@ -4,7 +4,7 @@
 <div class="address-bar">Consulte o score de crédito dos seus clientes</div>
 
 <!-- Navigation -->
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" ng-controller="HeaderCtrl">
     <div class="container">
         <!-- aparecerá somente em dispositivos mobile -->
         <div class="navbar-header">
@@ -22,9 +22,10 @@
             <ul class="nav navbar-nav">
                 <!-- cada linha é um item do menu -->
                 <li><a href="#/">O que é?</a></li>
-                <li><a href="#/cadastro">Cadastre-se</a></li>
-                <li><a href="#/consulta">Consultar CPF</a></li>
-                <li><a href="#/login">Login</a></li>
+                <li ng-if="!estahLogado"><a href="#/cadastro">Cadastre-se</a></li>
+                <li ng-if="estahLogado"><a href="#/consulta">Consultar CPF</a></li>
+                <li ng-if="!estahLogado"><a href="#/login">Login</a></li>
+                <li ng-if="estahLogado" ng-click="logout()"><a href="#">Logout</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
