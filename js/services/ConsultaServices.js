@@ -10,10 +10,10 @@ app.factory('consultaServices', ['$http', 'locationServices', function ($http, l
         })
     }
 
-    function consultarHistorico(id, callback) {
+    function consultarHistorico(callback) {
         $http({
             method: 'GET',
-            url: locationServices.getLocationAPI() + '/empresas/'+id+'/historico'
+            url: locationServices.getLocationAPI() + '/empresas/historico'
         }).then(function (data) {
             if (callback) callback(data)
         })
