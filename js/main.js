@@ -31,4 +31,18 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         .otherwise("/404");
 
         $locationProvider.hashPrefix('');
-}]);
+}]).run(function($rootScope, authServices, $location) {
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+        var pathsDeslogado = ['/cadastro', '/login']
+        var pathsAbertos = ['/', '/404'];
+        var path = next.$$route.originalPath.replace(/\/+$/, '');
+        var logado = authServices.estahLogado();
+        if (logado && pathsDeslogado.indexOf(path) !== -1) {
+            $location.path('/');
+            return;
+        }
+        if (!logado && pathsDeslogado.indexOf(path) === -1 && pathsAbertos.indexOf(path) === -1) {
+            $location.path('/login');
+        }
+    })
+});

@@ -1,8 +1,8 @@
-app.controller('HeaderCtrl', function ($scope, $location, loginServices, $window) {
-    $scope.estahLogado = loginServices.estahLogado();
+app.controller('HeaderCtrl', function ($scope, $location, authServices, $window) {
+    $scope.estahLogado = authServices.estahLogado();
 
     $scope.logout = function () {
-        loginServices.logout();
+        authServices.logout();
         $location.url('/');
         $window.location.reload();
     }

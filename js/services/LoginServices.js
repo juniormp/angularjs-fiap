@@ -1,4 +1,4 @@
-app.factory('loginServices', ['$http', 'locationServices', '$window', function ($http, locationServices, $window) {
+app.factory('loginServices', ['$http', 'locationServices', 'authServices', function ($http, locationServices, authServices) {
 
     var TOKEN_KEY = 'auth';
 
@@ -9,26 +9,11 @@ app.factory('loginServices', ['$http', 'locationServices', '$window', function (
             data: JSON.stringify(login)
         }).then(function (data) {
             var token = data.headers('authorization');
-            $window.localStorage.setItem(TOKEN_KEY, token);
+            authServices.login(token);
         });
     }
 
-    function getToken() {
-        return $window.localStorage.getItem(TOKEN_KEY);
-    }
-
-    function estahLogado() {
-        return getToken() !== null;
-    }
-
-    function logout() {
-        $window.localStorage.removeItem(TOKEN_KEY);
-    }
-
     return {
-        login: login,
-        getToken: getToken,
-        estahLogado: estahLogado,
-        logout: logout
+        login: login
     };
-}])
+}]);
