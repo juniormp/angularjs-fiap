@@ -23,7 +23,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         // configura��o das rotas bem parecidas para as outras paginas
         .when("/cadastro", {templateUrl: "templates/cadastro.html", controller: "CadastroCtrl"})
         .when("/consulta", {templateUrl: "templates/consulta.html", controller: "ConsultaCtrl"})
-        .when("/historico", {templateUrl: "templates/historico.html", controller: "ConsultaCtrl"})
+        .when("/historico", {templateUrl: "templates/historico.html", controller: "HistoricoCtrl"})
         .when("/login", {templateUrl: "templates/login.html", controller: "LoginCtrl"})
         /* aqui voc� pode adicionar rotas para outras paginas que desejar criar */
         // por �ltimo dizemos se nenhuma url digitada for encontrada mostramos a p�gina 404 que n�o existe no nosso servidor

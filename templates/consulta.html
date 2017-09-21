@@ -5,27 +5,14 @@
             <h2 class="intro-text text-center"><strong>Consulta de CPF</strong></h2>
             <hr>
             <form>
-
                 <div class="form-group">
-
-                    <div class="input-group">
-                       <input   ng-model="cpf"
-                                type="text" 
-                                class="form-control"
-                                placeholder="Qual o cpf ?">
-
-                        <button type="submit" 
-                        class="btn btn-primary btn-large"
-                        ng-click="consultarCPF(cpf)">Consultar</button>
-
-                        <input   ng-model="score"
-                            type="text" 
-                            class="form-control"
-                            placeholder="Score: ">
-
-                    </div>
+                    <input ng-model="consulta.cpf" type="text"  class="form-control" placeholder="Qual o cpf ?">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-large" ng-click="consultarCPF()">Consultar</button>
                 </div>
             </form>
+            <input ng-model="consulta.score" type="text" class="form-control" placeholder="Score: " disabled>
         </div>
     </div>
 

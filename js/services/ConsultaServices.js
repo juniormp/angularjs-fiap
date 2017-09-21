@@ -2,11 +2,12 @@ app.factory('consultaServices', ['$http', 'locationServices', 'authServices', fu
 
     function consultarCPF(cpf, callback) {
         $http({
-            method: 'GET',
+            method: 'POST',
             url: locationServices.getLocationAPI() + '/score',
-            data: JSON.stringify(cpf)
-        }).then(function (data) {
-            if (callback) callback(data)
+            data: JSON.stringify({ cpf: cpf })
+        }).then(function (result) {
+            console.log(result);
+            if (callback) callback(result.data.score)
         })
     }
 
@@ -15,11 +16,13 @@ app.factory('consultaServices', ['$http', 'locationServices', 'authServices', fu
             method: 'GET',
             url: locationServices.getLocationAPI() + '/empresas/historico'
         }).then(function (data) {
+            console.log(data);
             if (callback) callback(data)
         })
     }
 
     return {
-        consultarHistorico: consultarHistorico
+        consultarHistorico: consultarHistorico,
+        consultarCPF: consultarCPF
     };
 }])

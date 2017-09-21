@@ -1,20 +1,14 @@
 app.controller('ConsultaCtrl', function ($scope, $location, consultaServices) {
 
-	$scope.nota = {
+	$scope.consulta = {
 		"cpf" : "",
         "score" : ""
 	};
 
-	consultaServices.consultarHistorico(function(historico) {
-		console.log(historico.data)
-		$scope.historico = historico.data
-	})
-
-	$scope.consultarCPF = function (cpf) {
-		consultaServices.consultarCPF(cpf, function(score) {
-			console.log(score);
-            // Jogar o valor do score no campo
-        })
+	$scope.consultarCPF = function () {
+		consultaServices.consultarCPF($scope.consulta.cpf, function(score) {
+            $scope.consulta.score = score;
+        });
 	};
 
 });
