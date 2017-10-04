@@ -8,7 +8,6 @@ app.controller('CadastroCtrl', function ($scope, $location, cadastroServices, to
 
 	$scope.salvar = function (empresa) {
 		cadastroServices.salvar(empresa, function (response) {
-			console.log(response)
 			if (response.status == 201) {
 				$scope.empresa = {
 					"nome": "",
